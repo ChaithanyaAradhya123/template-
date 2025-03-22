@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Retinopathy Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="home" class="section">
+        <h1>Home page</h1>
+        <h2>Welcome to the Diabetic Retinopathy Hub</h2>
+        <button onclick="showSection('signup')">Sign Up</button>
+        <button onclick="showSection('login')">Login</button>
+    </div>
+
+    <div id="signup" class="section">
+        <h1>Sign Up</h1>
+        <form id="signupForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <br>
+        <p>If you already have an account, <button onclick="showSection('login')">Login</button></p>
+    </div>
+
+    <div id="login" class="section">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="login-name">Name:</label>
+            <input type="text" id="login-name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" required>
+            <button type="submit">Login</button>
+        </form>
+        <br>
+        <p>If you don't have an account, <button onclick="showSection('signup')">Sign Up</button></p>
+    </div>
+
+    <div id="upload" class="section">
+        <h1>Upload Your Image</h1>
+        <form id="uploadForm">
+            <label for="image-upload">Select Image:</label>
+            <input type="file" id="image-upload" accept="image/*">
+            <button type="submit">Upload</button>
+        </form>
+        <br>
+        <p>If you want to go back, <button onclick="showSection('home')">Home</button></p>
+
+        <div id="image-preview-container"></div>
+    </div>
+
+    <!-- Prediction Section -->
+    <div id="prediction" class="section">
+        <h1>Prediction Result</h1>
+        <p>Upload an image to make a prediction.</p>
+        <form id="predictionForm">
+            <label for="image-upload-prediction">Select Image:</label>
+            <input type="file" id="image-upload-prediction" accept="image/*">
+            <button type="submit">Upload and Predict</button>
+        </form>
+        <br>
+        <div id="image-preview-container-prediction"></div>
+        <div id="prediction-result"></div>
+        <br>
+        <button onclick="showSection('home')">Back to Home</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
